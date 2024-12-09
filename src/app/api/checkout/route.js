@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-const stripe = require("stripe")(process.env.STRIPE_KEY);
+const stripe = process.env.STRIPE_KEY;
 
 const getActiveProducts = async () => {
   // katalogdaki bütün ürünleri al

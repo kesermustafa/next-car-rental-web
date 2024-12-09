@@ -23,12 +23,15 @@ const Detail = async ({ params }: Props) => {
 				<Title car={vehicle} />
 				<Images url={vehicle.imageUrl} />
 				
-				<div className="grid xl:grid-cols-5 gap-x-10 my-10">
-					<div className="xl:col-span-4">
+				<div className="grid xl:grid-cols-5 mx-auto gap-x-10 my-10">
+					<div className="xl:col-span-5 xl:px-40  mb-5">
 						<Overview car={vehicle} />
 					</div>
 					
-					<OrderBox car={vehicle} />
+					<div className="xl:col-span-5 xl:px-40  mb-5">
+						<OrderBox car={vehicle} />
+					</div>
+					
 				</div>
 			</div>
 		</div>

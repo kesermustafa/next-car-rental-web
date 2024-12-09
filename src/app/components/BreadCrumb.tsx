@@ -6,13 +6,13 @@ type Props = {
 
 const BreadCrumb = ({ name }: Props) => {
 	return (
-		<div>
+		<div className={"flex items-center gap-1"}>
 			<Link className="text-blue-500" href="/">
 				Anasayfa
 			</Link>
-			<span className="mx-1">/</span>
+			<span >/</span>
 			<span>Arabalar</span>
-			<span className="mx-1">/</span>
+			<span >/</span>
 			<span>{name}</span>
 		</div>
 	);

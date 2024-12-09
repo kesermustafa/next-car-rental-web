@@ -41,13 +41,13 @@ const Title = ({ car }: Props) => {
 				</div>
 			</div>
 			
-			<div className="flex gap-5 mt-5">
+			<div className="flex flex-wrap gap-3 mt-5">
 				{arr.map((item, key) => (
 					<div
 						key={key}
-						className="py-1 px-5 rounded-full bg-blue-500/30 flex gap-2 items-center md:mb-5"
+						className="py-1 px-3 rounded-full bg-blue-500/30 flex gap-1 items-center md:mb-5"
 					>
-						<Image src={item.icon} width={15} height={15} alt="icon" />
+						<Image className="aspect-square" src={item.icon} width={15} height={15} alt="icon" />
 						<span>{item.name}</span>
 					</div>
 				))}

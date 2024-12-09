@@ -12,7 +12,7 @@ const Images = ({ url }: Props) => {
 	
 	return (
 		<div>
-			<div className="relative max-md:h-[300px]">
+			<div className="relative max-md:h-[400px]">
 				<Image
 					src={url}
 					fill
@@ -22,9 +22,9 @@ const Images = ({ url }: Props) => {
 				/>
 			</div>
 			
-			<div className="grid grid-cols-2 gap-5">
+			<div className="grid sm:grid-cols-2 place-items-center gap-5">
 				{arr.map((src, key) => (
-					<Image key={key} src={src} alt="car" className="rounded-md" />
+					<Image key={key}  src={src} priority={true} alt="car" className="rounded-md" />
 				))}
 			</div>
 		</div>
