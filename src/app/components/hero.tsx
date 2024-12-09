@@ -3,15 +3,19 @@ import { models } from "../utils/contants";
 
 const Hero = () => {
 	return (
-		<div className="h-[100vh] bg-center bg-cover grid place-items-center p-5 bg-black text-white bg-[linear-gradient(#00000084,#00000084),url('../assets/images/bg.jpg')]">
+		<div className="h-[100vh] bg-center bg-cover bg-no-repeat grid place-items-center p-5
+		bg-black text-white
+		bg-[linear-gradient(#00000084,#00000084),url('../assets/images/bg-car1.jpg')]
+		sm:bg-[linear-gradient(#00000084,#00000084),url('../assets/images/bg-car2.jpg')]
+		lg:bg-[linear-gradient(#00000084,#00000084),url('../assets/images/bg.jpg')]">
 			<div className="text-center flex flex-col gap-8">
-				<p>Yakınındaki kiralık araçları keşfet</p>
+				<p className={"text-[clamp(1rem,3vw,2rem)] "}>Yakınındaki kiralık araçları keşfet</p>
 				
-				<h1 className="text-4xl md:text-5xl font-bold">
-					Kendin İçin Mükemmek Aracı Bul
+				<h1 className=" font-bold text-amber-400 text-[clamp(1.5rem,4.5vw,5rem)] ">
+					Kendin İçin Mükemmel Aracı Bul
 				</h1>
 				
-				<p>Kendine uygun modeli belirle</p>
+				<p className={"text-[clamp(1rem,3vw,2rem)] "}>Kendine uygun modeli belirle</p>
 				
 				<div className="flex gap-4 justify-center flex-wrap">
 					{models.map((model, key) => (

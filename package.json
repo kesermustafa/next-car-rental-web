@@ -6,10 +6,12 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build:tailwind": "tsc tailwind.config.mts --outDir . --esModuleInterop"
   },
   "dependencies": {
     "dotenv": "^16.4.7",
+    "millify": "^6.1.0",
     "mongoose": "^8.8.4",
     "next": "15.0.4",
     "react": "^19.0.0",

@@ -1,4 +1,5 @@
 import { CarType } from "../utils/types";
+import Card from "@/app/components/Card";
 
 type ReturnType = Promise<{
 	message: string;
@@ -24,11 +25,11 @@ const List = async () => {
 				Bütün Araçları Keşfedin
 			</h1>
 			
-			<div>
+			<div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
 				{res.data.map((i) => (
-					<div key={i._id}>
-						<h1>{i.make}</h1>
-					</div>
+					
+						<Card key={i._id} car={i}/>
+			
 				))}
 			</div>
 		</div>
