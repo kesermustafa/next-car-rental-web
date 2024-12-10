@@ -1,41 +1,28 @@
 import mongoose from "mongoose";
 
+// mongodb veritbanına bağlan
+mongoose.connect(process.env.MONGO_URL);
 
-// MongoDB bağlantısını kuran fonksiyon
-const connectDB = async () => {
-    try {
-      await mongoose.connect("mongodb+srv://admin:admin@notour.ihasugb.mongodb.net/CarDB");
-    } catch (error) {
-        console.error("MongoDB bağlantı hatası:", error);
-        process.exit(1); // Hata durumunda uygulamayı durdur
-    }
-};
-
-// MongoDB bağlantısını başlat
-connectDB()
-    .then(() => console.log("MongoDB bağlantısı başarılı!"))
-    .catch((error) => console.error("MongoDB bağlantı hatası:", error));
-
-// Mongoose global ayarları
+// ayar
 mongoose.Promise = global.Promise;
 
-// Araç (Vehicle) şeması
+// şema oluşturma
 const VehicleSchema = new mongoose.Schema({
-    make: { type: String, required: true },
-    model: { type: String, required: true },
-    year: { type: Number, required: true },
-    price: { type: Number, required: true },
-    color: String,
-    mileage: Number,
-    fuelType: String,
-    transmission: String,
-    condition: String,
-    imageUrl: String,
+  make: String,
+  model: String,
+  year: Number,
+  price: Number,
+  color: String,
+  mileage: Number,
+  fuelType: String,
+  transmission: String,
+  condition: String,
+  imageUrl: String,
 });
 
-// Araç (Vehicle) modelini oluştur
-// Mevcut model varsa onu kullan, yoksa yeni oluştur
+// model oluştur
+// performanc açısından her importta yeni model oluşturmamak için önce mevcut modellerin arasında Vehicle modeli varmı kontrol ediyor varsa onu export ediyor yoksa yenisini oluşturup export eder
 const Vehicle =
-    mongoose.models.Vehicle || mongoose.model("Vehicle", VehicleSchema);
+  mongoose.models?.Vehicle || mongoose.model("Vehicle", VehicleSchema);
 
 export default Vehicle;

@@ -18,22 +18,3 @@ body {
     @apply py-5 md:py-10 px-5 md:px-10 lg:px-20 max-w-[1440px] mx-auto;
   }
 }
-
-
-::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #aaa3af;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #707172;
-}

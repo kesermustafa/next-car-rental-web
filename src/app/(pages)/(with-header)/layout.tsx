@@ -1,18 +1,17 @@
-
+import Header from "@/app/components/Header";
 import React from "react";
-import Header from "@/app/components/header";
 
 type Props = {
-	children: React.ReactNode;
+  children: JSX.Element;
 };
 
 const Layout = ({ children }: Props) => {
-	return (
-		<div>
-			<Header />
-			{children}
-		</div>
-	);
+  return (
+    <div>
+      <Header />
+      {children}
+    </div>
+  );
 };
 
 export default Layout;

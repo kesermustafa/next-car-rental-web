@@ -1,7 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 // mongodb veritbanına bağlan
-mongoose.connect("mongodb+srv://admin:admin@notour.ihasugb.mongodb.net/CarDB");
+mongoose.connect(process.env.MONGO_URL);
 
 // ayar
 mongoose.Promise = global.Promise;
